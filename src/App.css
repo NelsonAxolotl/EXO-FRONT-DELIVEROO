@@ -1,0 +1,288 @@
+/*----ALL----*/
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*---HEADER----*/
+header {
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header img {
+  height: 40px;
+}
+
+.border {
+  border: 1px solid lightgray;
+  /*---spliting ligne btw border and section*/
+}
+
+/*------SECTION (under header) ----*/
+
+.section {
+  background: white;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+  height: 260px;
+}
+
+.section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-bottom: 20px;
+}
+
+.section h1 {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.section p {
+  padding-top: 30px;
+  padding-right: 20px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: grey;
+}
+
+.section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width:800px) {
+  .section h1 {
+    font-size: 25px;
+  }
+
+  .section p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width:730px) {
+  .section h1 {
+    font-size: 23px;
+  }
+
+  .section p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width:530px) {
+  .section h1 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+
+/*----MAIN---*/
+
+main {
+  background-color: #f3f5f5;
+  padding-top: 20px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 30px 0 20px 0;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.673);
+  margin-bottom: 10px;
+
+}
+
+.main-container {
+  display: flex;
+  border: 1px solid rgb(0, 255, 200);
+}
+
+.part-left {
+  /* background-color: red; */
+  /* Section left with all articles*/
+  width: 70%;
+}
+
+article {
+  background-color: white;
+  width: 48%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 170px;
+  /* border: 1px solid red; */
+  /*Section article whithout h2 */
+  cursor: pointer;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: red; */
+  justify-content: space-between;
+}
+
+article img {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 5px;
+  /*border: 1px solid rebeccapurple;*/
+}
+
+article .description {
+  /* border: solid black 1px; */
+  /*section article p reduced with only 2 lignes (over-flow)*/
+  height: 38px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+article p {
+  color: grey;
+  line-height: 18px;
+  font-size: 18px;
+}
+
+.spany {
+  /*border: 1px solid red;*/
+  margin-top: 30px;
+}
+
+article .orange {
+  color: rgb(255, 137, 2);
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/*Section cart */
+.part-right {
+  height: 400px;
+  background-color: white;
+  width: 350px;
+  margin-left: 30px;
+  border-radius: 10px;
+  padding-left: 15px;
+}
+
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-p {
+  font-size: 30px;
+  color: rgb(84, 222, 176);
+  font-weight: bold;
+  margin-top: 65px;
+}
+
+.btn {
+  margin: 20px 0;
+
+}
+
+.btn button {
+  border-radius: 50%;
+  background-color: rgb(90, 216, 180);
+  border: none;
+  margin-bottom: 5px;
+}
+
+.price {
+  padding-left: 20px;
+}
+
+.meal {
+  margin-left: 30px;
+}
+
+.total {
+  border-top: 1px solid rgb(90, 216, 180);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.total p {
+  border-top: 1px solid rgb(90, 216, 180);
+  padding-top: 20px;
+}
+
+.btn-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.btn-cart button {
+  border: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgb(90, 216, 180);
+  cursor: pointer;
+}
+
+.number {
+  padding: 0 5px;
+}
+
+@media (max-width:1090px) {
+  article {
+    width: 100%;
+  }
+
+  @media (max-width:800px) {
+    article {
+      width: 100%;
+    }
+
+    article p {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
