@@ -9,10 +9,16 @@ function Total({ cart, deliveryFees }) {
 
     return (
         <div className="total">
-            <span>Sous-total : {subTotal.toFixed(2)} €</span>
-            <span>Frais de livraison : {deliveryFees.toFixed(2)} €</span>
-            <p>Total : {total.toFixed(2)} €</p>
-        </div>
+            <div className="flex-total">
+                <p>Sous-total : </p> <span>{subTotal.toFixed(2)} €</span>
+            </div>
+            <div className="flex-total">
+                <p>Frais de livraison : </p><span>{deliveryFees.toFixed(2)} €</span>
+            </div>
+            <div className="flex-total">
+                <p>Total : </p><span>{total.toFixed(2)} €</span>
+            </div>
+        </div >
     );
 }
 

@@ -1,6 +1,7 @@
 /*----ALL----*/
 * {
   box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
 .container {
@@ -8,6 +9,8 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/*------------------------------------------------------------*/
 
 /*---HEADER----*/
 header {
@@ -23,17 +26,20 @@ header img {
 
 .border {
   border: 1px solid lightgray;
-  /*---spliting ligne btw border and section*/
+  /*---splitting ligne btw border and section*/
 }
+
+/*------------------------------------------------------------*/
 
 /*------SECTION (under header) ----*/
 
 .section {
-  background: white;
+  background: rgb(255, 255, 255);
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 65% 35%;
   align-items: center;
   height: 260px;
+  gap: 10px
 }
 
 .section-text {
@@ -47,7 +53,7 @@ header img {
   color: black;
   font-size: 30px;
   font-weight: bold;
-
+  font-family: "Manrope", sans-serif;
 }
 
 .section p {
@@ -55,8 +61,8 @@ header img {
   padding-right: 20px;
   font-size: 20px;
   line-height: 28px;
-  font-weight: 400;
-  color: grey;
+  color: rgb(167, 160, 160);
+  font-family: "Manrope", sans-serif;
 }
 
 .section img {
@@ -66,6 +72,7 @@ header img {
   border-radius: 10px;
 }
 
+/*-----RESPONSIVE---*/
 @media (max-width:800px) {
   .section h1 {
     font-size: 25px;
@@ -89,23 +96,38 @@ header img {
 }
 
 @media (max-width:530px) {
+  .section {
+    margin-top: 10px;
+  }
+
   .section h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .section p {
-    font-size: 15px;
     line-height: 18px;
+  }
+
+  .section img {
+    height: 150px;
+    margin-top: 35px;
   }
 }
 
+/*-----------------------------------------------------------*/
 
 /*----MAIN---*/
-
 main {
+  margin-top: 20px;
+}
+
+.main-container {
+  /* border: 1px solid rgb(0, 255, 200); */
   background-color: #f3f5f5;
   padding-top: 20px;
   border-radius: 5px;
+  display: flex;
+  gap: 30px;
 }
 
 h2 {
@@ -116,24 +138,18 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.673);
-  margin-bottom: 10px;
-
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.957);
+  margin-bottom: 15px;
 }
 
-.main-container {
-  display: flex;
-  border: 1px solid rgb(0, 255, 200);
-}
-
+/* Left section with all articles*/
 .part-left {
   /* background-color: red; */
-  /* Section left with all articles*/
-  width: 70%;
+  width: 65%;
 }
 
+/*Article section whithout h2 */
 article {
   background-color: white;
   width: 48%;
@@ -143,30 +159,33 @@ article {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 170px;
-  /* border: 1px solid red; */
-  /*Section article whithout h2 */
+  height: 180px;
+  border: 1px solid rgba(217, 217, 217, 0.412);
   cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+article:hover {
+  transform: scaleX(1.05);
 }
 
 .articles-container {
   display: flex;
   flex-wrap: wrap;
-  /* background-color: red; */
   justify-content: space-between;
 }
 
 article img {
+  /*border: 1px solid rebeccapurple;*/
   height: 130px;
   width: 130px;
   object-fit: cover;
   border-radius: 5px;
-  /*border: 1px solid rebeccapurple;*/
 }
 
 article .description {
   /* border: solid black 1px; */
-  /*section article p reduced with only 2 lignes (over-flow)*/
+  /* Article section p is reduced with only 2 lignes (over-flow)*/
   height: 38px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -190,32 +209,71 @@ article .orange {
   font-size: 15px;
 }
 
-/*Section cart */
-.part-right {
-  height: 400px;
-  background-color: white;
-  width: 350px;
-  margin-left: 30px;
-  border-radius: 10px;
-  padding-left: 15px;
+/*----RESPONSIVE---*/
+
+@media (max-width:1145px) {
+  article {
+    width: 100%;
+  }
 }
 
-aside {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width:800px) {
+  .part-left {
+    width: 100%;
+  }
+
+  article p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+}
+
+@media (max-width:600px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  article p {
+    font-size: 14px;
+  }
+}
+
+/*Section cart */
+.part-right {
+  background-color: white;
+  height: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  margin-left: 40px;
 }
 
 .cart-p {
   font-size: 30px;
   color: rgb(84, 222, 176);
   font-weight: bold;
-  margin-top: 65px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.cart-p:hover {
+  color: grey;
 }
 
 .btn {
   margin: 20px 0;
-
 }
 
 .btn button {
@@ -223,66 +281,124 @@ aside {
   background-color: rgb(90, 216, 180);
   border: none;
   margin-bottom: 5px;
-}
-
-.price {
-  padding-left: 20px;
-}
-
-.meal {
-  margin-left: 30px;
+  cursor: pointer;
 }
 
 .total {
-  border-top: 1px solid rgb(90, 216, 180);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.total p {
+.flex-meal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-top: 1px solid rgb(90, 216, 180);
+}
+
+.total p {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .btn-cart {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .btn-cart button {
   border: none;
   font-size: 20px;
+  font-weight: bold;
   padding: 10px 20px;
   border-radius: 10px;
   background: rgb(90, 216, 180);
+  border: 1px solid rgb(90, 216, 180);
   cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.btn-cart button:hover {
+  background: white;
+  font-weight: normal;
 }
 
 .number {
   padding: 0 5px;
 }
 
-@media (max-width:1090px) {
-  article {
+.meal {
+  padding-right: 30px;
+  font-size: 15px;
+}
+
+/*-----RESPONSIVE----*/
+
+@media (max-width:1205px) {
+  .part-right {
+    width: 35%;
+  }
+
+  .cart-p {
+    text-align: center;
+  }
+
+}
+
+@media (max-width:1080px) {
+  .part-right {
+    width: 40%;
+  }
+}
+
+@media (max-width:990px) {
+  .part-right {
+    width: 50%;
+  }
+}
+
+@media (max-width:880px) {
+  .part-right {
+    width: 60%;
+  }
+}
+
+@media (max-width:810px) {
+
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .cart-p {
+    text-align: center;
+  }
+
+  .part-right {
+    margin-right: 30px;
+    width: 90%;
+  }
+}
+
+
+@media (max-width:600px) {
+
+  .part-right {
+    margin-left: 0;
     width: 100%;
   }
 
-  @media (max-width:800px) {
-    article {
-      width: 100%;
-    }
-
-    article p {
-      font-size: 16px;
-      line-height: 18px;
-    }
-
-    h3 {
-      font-size: 18px;
-    }
+  .cart-p {
+    text-align: center;
   }
 }

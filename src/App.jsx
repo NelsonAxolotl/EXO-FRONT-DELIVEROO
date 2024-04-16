@@ -69,66 +69,66 @@ function App() {
     <>
 
       <div className="container">
+
         <Header />
       </div>
       <div className="border"></div>
       <div className="container">
+
         <Section
           title={data.restaurant.name}
           description={data.restaurant.description}
           picture={data.restaurant.picture}
         />
-        <main>
-          <div className="container main-container">
-            <section className="part-left">
-              {data.categories.map((category, index) => {
-                if (category.meals.length !== 0) {
-                  return (
-                    <div key={index}>
-                      <Title title={category.name} />
-                      <div className="articles-container">
-                        {category.meals.map((meal) => (
-                          <MenuElement
-                            key={meal.id}
-                            meal={meal}
-                            handleAddToCart={handleAddToCart}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  );
-                } else {
-                  return null;
-                }
-              })}
-            </section>
-            <section className="part-right">
-              <aside>
-                {cart.length === 0 ? (
-                  <p className="cart-p">Panier vide</p>
-                ) : (
-                  <div>
-                    {cart.map((meal) => (
-                      <CartItem
-                        key={meal.id}
-                        meal={meal}
-                        handleRemoveFromCart={handleRemoveFromCart}
-                        handleAddToCart={handleAddToCart}
-                      />
-                    ))}
-                    <Total cart={cart} deliveryFees={deliveryFees} />
-                    <div className="btn-cart">
-                      <button onClick={() => setCart([])}>Vider le panier</button>
+      </div>
+      <main>
+        <div className="container main-container">
+          <section className="part-left">
+            {data.categories.map((category, index) => {
+              if (category.meals.length !== 0) {
+                return (
+                  <div key={index}>
+                    <Title title={category.name} />
+                    <div className="articles-container">
+                      {category.meals.map((meal) => (
+                        <MenuElement
+                          key={meal.id}
+                          meal={meal}
+                          handleAddToCart={handleAddToCart}
+                        />
+                      ))}
                     </div>
                   </div>
-                )}
-              </aside>
-            </section>
-          </div>
-        </main>
-
-      </div>
-
+                );
+              } else {
+                return null;
+              }
+            })}
+          </section>
+          <section className="part-right">
+            <aside>
+              {cart.length === 0 ? (
+                <p className="cart-p">Panier vide</p>
+              ) : (
+                <div>
+                  {cart.map((meal) => (
+                    <CartItem
+                      key={meal.id}
+                      meal={meal}
+                      handleRemoveFromCart={handleRemoveFromCart}
+                      handleAddToCart={handleAddToCart}
+                    />
+                  ))}
+                  <Total cart={cart} deliveryFees={deliveryFees} />
+                  <div className="btn-cart">
+                    <button onClick={() => setCart([])}>Vider le panier</button>
+                  </div>
+                </div>
+              )}
+            </aside>
+          </section>
+        </div>
+      </main>
 
     </>
   )
